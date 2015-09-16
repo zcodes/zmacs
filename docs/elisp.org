@@ -1,0 +1,2 @@
+#+TITLE: Emacs Lisp Notes
+#+STARTUP: hidestars
