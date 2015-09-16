@@ -45,6 +45,7 @@
 ;; Load files
 (require 'zmacs-base-init)
 (require 'zmacs-base-file)
+(require 'zmacs-base-ui)
 
 ;; End of init.el
 
