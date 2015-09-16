@@ -43,6 +43,7 @@
 (add-to-list 'load-path zmacs/base-directory)
 
 ;; Load files
+(require 'zmacs-base-init)
 (require 'zmacs-base-file)
 
 ;; End of init.el
