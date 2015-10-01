@@ -46,6 +46,10 @@
 (require 'zmacs-base-init)
 (require 'zmacs-base-file)
 (require 'zmacs-base-ui)
+(require 'zmacs-base-edit)
+
+(if (file-exists-p "~/.emacs.d/local.el")
+    (load-file "~/.emacs.d/local.el"))
 
 ;; End of init.el
 
