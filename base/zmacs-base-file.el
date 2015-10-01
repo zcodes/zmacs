@@ -5,3 +5,4 @@
     (setq file-name-coding-system 'gbk))
 
 (provide 'zmacs-base-file)
+;; End of zmacs-base-file.el

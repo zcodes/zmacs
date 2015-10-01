@@ -11,4 +11,4 @@
       (add-to-list 'default-frame-alist '(height . 30))))
 
 (provide 'zmacs-base-ui)
-;; End of zcodes-base-ui.el
+;; End of zmacs-base-ui.el
