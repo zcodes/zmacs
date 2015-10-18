@@ -3,6 +3,7 @@
 (setq use-dialog-box nil)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
+(blink-cursor-mode 0)
 
 ;; initial frame size
 (if window-system
