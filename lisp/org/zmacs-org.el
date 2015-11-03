@@ -9,5 +9,5 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-
 (provide 'zmacs-org)
+;; End of file lisp/org/zmacs-org.el

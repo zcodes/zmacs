@@ -12,22 +12,25 @@
       (when (executable-find "gpg") 'allow-unsigned))
 
 ;; Install package from elpa.
-(defun zmacs/elpa-install (package &optional min-version)
+(defun zmacs-elpa-install (package &optional min-version)
+  "Install package from elpa."
   (unless (package-installed-p package min-version)
     (if (assoc package package-archive-contents)
-	(package-install package)
+	(package-install package t)
       (progn
 	(package-refresh-contents)
-	(package-install package 'no-active)))))
+	(package-install package t)))))
 
-(defun zmacs/elpa-package-version (package)
+(defun zmacs-elpa-package-version (package)
+  "Get the version number list of the package in elpa."
   (unless package--initialized (error "package.el is not yet initialized!"))
   (if (fboundp 'package-desc-version)
-      (car (package-desc-version
-	    (cadr (assoc package package-archive-contents))))
-    (car (package-desc-vers
-	  (cdr (assoc package package-archive-contents))))))
+      (package-desc-version
+       (cadr (assoc package package-archive-contents)))
+    (package-desc-vers
+     (cdr (assoc package package-archive-contents)))))
 
 (package-initialize)
 
 (provide 'zmacs-base-elpa)
+;; End of lisp/base/zmacs-base-elpa.el

@@ -16,4 +16,4 @@
       (add-to-list 'default-frame-alist '(height . 30))))
 
 (provide 'zmacs-base-ui)
-;; End of zmacs-base-ui.el
+;; End of lisp/base/zmacs-base-ui.el

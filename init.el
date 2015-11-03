@@ -40,16 +40,16 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(defvar zmacs/version "0.0.1")
-(defvar zmacs/base-directory
+(defvar zmacs-version "0.0.1")
+(defvar zmacs-base-directory
   (concat (expand-file-name user-emacs-directory) "lisp"))
-(defvar zmacs/*is-windows*
+(defvar zmacs-windows-system-p
   (equal system-type 'windows-nt))
 
 ;; Loading paths
 (dolist (path (list "base" "org"))
   (add-to-list 'load-path
-	       (expand-file-name path zmacs/base-directory)))
+	       (expand-file-name path zmacs-base-directory)))
 
 ;; Load files
 (require 'zmacs-base-init)
