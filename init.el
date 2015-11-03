@@ -33,23 +33,46 @@
 
 ;;; Code:
 ;; Basic variables
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (defvar zmacs/version "0.0.1")
 (defvar zmacs/base-directory
-  (concat (expand-file-name user-emacs-directory) "base"))
+  (concat (expand-file-name user-emacs-directory) "lisp"))
 (defvar zmacs/*is-windows*
   (equal system-type 'windows-nt))
 
 ;; Loading paths
-(add-to-list 'load-path zmacs/base-directory)
+(dolist (path (list "base" "org"))
+  (add-to-list 'load-path
+	       (expand-file-name path zmacs/base-directory)))
 
 ;; Load files
 (require 'zmacs-base-init)
+(require 'zmacs-base-elpa)
 (require 'zmacs-base-file)
 (require 'zmacs-base-ui)
 (require 'zmacs-base-edit)
+
+(require 'zmacs-org)
 
 (if (file-exists-p "~/.emacs.d/local.el")
     (load-file "~/.emacs.d/local.el"))
 
 ;; End of init.el
-
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote ("org" "org" org-20151005))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

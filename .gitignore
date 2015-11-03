@@ -2,3 +2,5 @@ auto-save-list
 *~
 local.el
 ido.last
+elpa
+eshell

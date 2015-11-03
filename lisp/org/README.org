@@ -1,0 +1,3 @@
+#+TITLE: Emacs Org-mode
+#+STARTUP: hidestars content
+#+AUTHORE: zcodes <zcodes@qq.com>
