@@ -1,0 +1,4 @@
+#+TITLE: ZMacs ChangeLog
+#+AUTHOR: zcodes <zcodes@qq.com>
+#+STARTUP: hidestars content
+
