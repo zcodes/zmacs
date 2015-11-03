@@ -20,6 +20,14 @@
 	(package-refresh-contents)
 	(package-install package 'no-active)))))
 
+(defun zmacs/elpa-package-version (package)
+  (unless package--initialized (error "package.el is not yet initialized!"))
+  (if (fboundp 'package-desc-version)
+      (car (package-desc-version
+	    (cadr (assoc package package-archive-contents))))
+    (car (package-desc-vers
+	  (cdr (assoc package package-archive-contents))))))
+
 (package-initialize)
 
 (provide 'zmacs-base-elpa)
