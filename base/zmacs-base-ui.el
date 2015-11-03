@@ -1,8 +1,12 @@
 ;; suppress gui features
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
+
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode 0))
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode 0))
+
 (blink-cursor-mode 0)
 
 ;; initial frame size
