@@ -11,7 +11,6 @@
 (setq package-check-signature
       (when (executable-find "gpg") 'allow-unsigned))
 
-;; Install package from elpa.
 (defun zmacs-elpa-install (package &optional min-version)
   "Install package from elpa."
   (unless (package-installed-p package min-version)
@@ -29,6 +28,12 @@
        (cadr (assoc package package-archive-contents)))
     (package-desc-vers
      (cdr (assoc package package-archive-contents)))))
+
+(defun zmacs-elpa-package-desc (package)
+  (let ((the-package-desc (assoc package package-archive-contents)))
+    (if (listp the-package-desc)
+	(car the-package-desc)
+      the-package-desc)))
 
 (package-initialize)
 

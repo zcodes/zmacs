@@ -1,7 +1,7 @@
 ;; Install Org-Mode from elpa.
 
 (defvar zmacs-org-package
-  (cadr (assoc 'org package-archive-contents))
+  (zmacs-elpa-package-desc 'org)
   "`org-mode' package-desc in elap.")
 
 (when (fboundp 'package-desc-p)
